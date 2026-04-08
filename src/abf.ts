@@ -3,11 +3,11 @@ import { I_vnode, patch } from './superfine'
 
 /** A Bit Fine */
 export
-function ABF<T>(roort: HTMLElement, accessor: I_accessor<T>, renderer: (data: T) => I_vnode) {
+async function ABF<T>(root: HTMLElement, accessor: I_accessor<T>, renderer: (data: T) => I_vnode) {
 	const storage = new Storage(accessor)
 	storage.subscribe((data: T) => {
-		patch(roort, renderer(data))
+		patch(root, renderer(data))
 	})
-	storage.trigger()
+	await storage.trigger()
 	return storage
 }

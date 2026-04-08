@@ -39,10 +39,10 @@ class Storage<T> {
 	subscribe(callback: (data: T) => void) {
 		this.subscriber_list.push(callback)
 		return () => {
-			this.subscriber_list.splice(
-				this.subscriber_list.indexOf(callback),
-				1,
-			)
+			const index = this.subscriber_list.indexOf(callback)
+			if (index === -1)
+				throw new Error('Subscriber not found')
+			this.subscriber_list.splice(index, 1)
 		}
 	}
 
