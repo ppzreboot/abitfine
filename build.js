@@ -7,6 +7,7 @@ await build({
 	entryPoints: ['src/index.ts'],
 	bundle: true,
 	platform: 'browser',
+	format: 'esm',
 	target: 'es2020',
 	outdir: 'dist',
 	logLevel: 'info',
