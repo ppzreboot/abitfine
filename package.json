@@ -1,20 +1,22 @@
 {
   "name": "abitfine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Bit Fine is a library for building simple web apps.",
   "exports": {
     ".": "./dist/index.js"
   },
-  "types": "src/index.ts",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "devDependencies": {
     "esbuild": "^0.28.0"
   },
   "dependencies": {
     "superfine": "^8.2.0"
+  },
+  "scripts": {
+    "build": "node build.js"
   },
   "type": "module",
   "keywords": [
