@@ -2,23 +2,17 @@
   "name": "abitfine",
   "version": "0.0.1",
   "description": "A Bit Fine is a library for building simple web apps.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ppzreboot/abitfine.git"
   },
+  "type": "module",
+  "types": "src/index.ts",
   "keywords": [
     "UI"
   ],
   "author": "PPz",
   "license": "Unlicense",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/ppzreboot/abitfine/issues"
-  },
-  "homepage": "https://github.com/ppzreboot/abitfine#readme",
   "devDependencies": {
     "esbuild": "^0.28.0"
   },
