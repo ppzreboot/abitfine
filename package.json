@@ -1,6 +1,6 @@
 {
   "name": "abitfine",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Bit Fine is a library for building simple web apps.",
   "exports": {
     ".": "./dist/index.js"

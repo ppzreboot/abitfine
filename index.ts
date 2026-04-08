@@ -78,10 +78,19 @@ class Storage<T> {
 
 /** A Bit Fine */
 export
-async function ABF<T>(root: HTMLElement, accessor: I_accessor<T>, renderer: (data: T) => I_vnode) {
+async function ABF<T>(
+	root: HTMLElement,
+	accessor: I_accessor<T>,
+	renderer: (data: T, set_state: (data: T) => Promise<void>) => I_vnode,
+) {
 	const storage = new Storage(accessor)
 	storage.subscribe((data: T) => {
-		patch(root, renderer(data))
+		patch(root,
+			renderer(
+				data,
+				async d => await storage.set(d),
+			),
+		)
 	})
 	await storage.trigger()
 	return storage
